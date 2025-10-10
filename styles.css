@@ -1,0 +1,215 @@
+/* A crude reset for a simple document */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0a0a 0%, #111 50%, #3c1057 100%);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+}
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+img {
+  border-radius: 1.5rem;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 2.25em;
+  line-height: 2.5rem;
+  text-align: left;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #4fc3f7, #9c27b0, #29b6f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 1.5rem;
+}
+
+.container {
+  max-width: 40.625rem;
+  margin: 3rem auto;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 1.25rem;
+  padding: 2rem;
+  backdrop-filter: blur(0.625rem);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.05);
+}
+
+p {
+  color: #bbb;
+  font-size: 1rem;
+  line-height: 1.45;
+  margin-bottom: 2rem;
+}
+
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.link:hover {
+  text-shadow: 0 0 0.5rem rgba(79, 195, 247, 0.4);
+  transform: translateY(-0.0625rem);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -0.125rem;
+  left: 0;
+  width: 0;
+  height: 0.0625rem;
+  background: linear-gradient(90deg, #4fc3f7, #29b6f6);
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 40%;
+}
+
+/* Gradient Link Styling */
+.gradient-link {
+  background: linear-gradient(135deg, #4fc3f7, #9c27b0, #29b6f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-link:hover {
+  background: linear-gradient(135deg, #29b6f6, #9c27b0, #4fc3f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  transform: translateY(-0.0625rem);
+}
+
+/* Social Media Links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: left;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  color: #bbb;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(79, 195, 247, 0.2),
+    rgba(156, 39, 176, 0.15)
+  );
+  border-color: rgba(79, 195, 247, 0.3);
+  color: #ffffff;
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.75rem rgba(79, 195, 247, 0.2);
+}
+
+.social-link svg {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover svg {
+  transform: scale(1.1);
+}
+
+/* Secondary Title Styling */
+.title-secondary {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  position: relative;
+}
+
+.title-secondary::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 2.5rem;
+  height: 0.125rem;
+  background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0.3));
+
+  border-radius: 0.0625rem;
+}
+
+/* Assignment List Styling */
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #bbb;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+li::before {
+  content: "🔗";
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
+  filter: hue-rotate(200deg) saturate(1.5);
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
